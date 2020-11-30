@@ -1,8 +1,9 @@
-function App() {
+import React from 'react';
+import Learn1 from './learn/Learn1.js';
+
+const App = () => {
   return (
-    <div className="App">
-      hello
-    </div>
+    <Learn1 />
   );
 }
 
