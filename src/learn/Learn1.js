@@ -8,13 +8,9 @@ const Learn1 = () => {
 
   const _promise = (param) => {
     return new Promise((resolve, reject) => {
-      axios.get('http://localhost:3002/api')
+      axios.get('http://localhost:3002/apia')
         .then((res) => {
-          if(param) {
-            resolve(res);
-          } else {
-            reject('error');
-          }
+          resolve(res);
         })
         .catch((err) => {
           reject(err);
