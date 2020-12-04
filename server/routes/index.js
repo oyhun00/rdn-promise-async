@@ -9,4 +9,12 @@ router.get('/', (req, res) => {
   );
 })
 
+router.get('/test', (req, res) => {
+  res.json(
+    {
+      greeting2: 'hello2'
+    }
+  );
+})
+
 module.exports = router;
