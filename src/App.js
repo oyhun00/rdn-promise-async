@@ -1,9 +1,9 @@
 import React from 'react';
-import Learn1 from './learn/Learn1.js';
+import Learn2 from './learn/Learn2.js';
 
 const App = () => {
   return (
-    <Learn1 />
+    <Learn2 />
   );
 }
 
