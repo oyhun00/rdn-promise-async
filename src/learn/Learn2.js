@@ -17,17 +17,32 @@ const Learn2 = () => {
     })
   }
 
+
+  let result = 2;
+
+  let _sync = () => {
+    setTimeout(() => result = 1, 1000);
+    alert(result);
+  }
+
+  let _pro = async () => {
+    setTimeout(() => 1,1000)
+    alert(await _pro);
+  }
+
+
   const _async = async () => {
-    const result = await _promise();
+    // const result = await _promise();
     
-    setGreeting({
-      ...greeting,
-      hello: result.greeting
-    })
+    // setGreeting({
+    //   ...greeting,
+    //   hello: result.greeting
+    // })
+
   }
 
   useEffect(() => {
-    _async();
+    _pro();
   }, []);
 
   return (
