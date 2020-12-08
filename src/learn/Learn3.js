@@ -8,41 +8,19 @@ const Learn3 = () => {
 
   const url = "http://localhost:3002/api";
 
-  const loadData = (url) => {
-    return axios.get(url)
-      .then(res => {
-        if (res) {
-          const { data } = res;
-          setGreeting({
-            hello: data.greeting
-          })
-        } else {
-          throw new Error('err');
-        }
-      })
+  const wait = async () => {
+    await new Promise (resolve => setTimeout(resolve, 1000));
+
+    return 10;
   }
 
-  const loadData_Promise = async (url) => {
-    let _pro = new Promise((resolve, reject) => {
-      axios.get(url)
-      .then(res => {
-        if (res) {
-          const { data } = res;
-          resolve(data.greeting);
-        } else {
-          reject('err');
-        }
-      })
-    })
-
-    setGreeting({
-      hello: await _pro
-    })
+  const f = () => {
+    wait().then(alert);
   }
 
 
   useEffect(() => {
-    loadData_Promise(url);
+    f();
   }, []);
 
   return (
