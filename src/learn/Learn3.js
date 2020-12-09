@@ -6,14 +6,20 @@ const Learn3 = () => {
     hello: 'no data',
   });
 
-  const url = "http://localhost:3002/api";
+  const url = "http://localhost:3002/apia";
 
   const loadData_Promise = async (url) => {
-    let _pro = await axios.get(url);
+    let _pro = 'default';
+    try {
+      _pro = await axios.get(url);
+      
+      setGreeting({
+        hello: _pro.data.greeting
+      })
+    } catch(err) {
+      console.log(err);
+    }
 
-    setGreeting({
-      hello: _pro.data.greeting
-    })
   }
 
 
